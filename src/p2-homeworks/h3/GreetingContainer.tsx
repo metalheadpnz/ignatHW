@@ -1,4 +1,4 @@
-import React, {useState,ChangeEvent} from 'react'
+import React, {useState, ChangeEvent, FocusEvent, KeyboardEvent} from 'react'
 import Greeting from './Greeting'
 import {UserType} from "./HW3";
 
@@ -18,18 +18,38 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
     const [error, setError] = useState<boolean>(false) // need to fix any
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
-        setName(e.currentTarget.value.trim()) // need to fix
+        setName(e.currentTarget.value) // need to fix
         setError(false)
     }
+
+    const trimmedName = name.trim()
+
     const addUser = () => {
-        if (name) {
-            addUserCallback(name)
-            alert(`Hello  ${name}`)
+
+        if (trimmedName) {
+            addUserCallback(trimmedName)
+            alert(`Hello  ${trimmedName}`)
+            setName('')
         } else {
             setError(true)
         }
         // need to fix
     }
+
+    const onFocusHandler = (e: FocusEvent<HTMLInputElement>) => {
+        setError(false)
+    }
+
+    const onBlurInputHandler = (e: FocusEvent<HTMLInputElement>) => {
+        trimmedName || setError(true)
+    }
+
+    const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+        (e.key === 'Enter' && name)
+            ? addUser()
+            : setError(true)
+    }
+
 
     const totalUsers = users.length // need to fix
 
@@ -40,6 +60,9 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             addUser={addUser}
             error={error}
             totalUsers={totalUsers}
+            onBlurInputHandler={onBlurInputHandler}
+            onKeyPressHandler={onKeyPressHandler}
+            onFocusHandler={onFocusHandler}
         />
     )
 }

@@ -8,13 +8,21 @@
     background-color: lightcoral;
 }
 
-.redText{
+.redText {
     color: red;
-
+    height: 50px;
 }
 
-.normalInput{
+
+.normal {
     outline: none;
     background-color: darkgreen;
     color: lightgreen;
+}
+
+.addButton{
+    background-color: forestgreen;
+}
+.addButton:disabled{
+    background-color: #5f705e;
 }
