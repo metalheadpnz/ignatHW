@@ -1,6 +1,7 @@
 import React from 'react'
 import {AffairType} from "./HW2";
 import styles from './Affairs.module.css'
+import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 
 type AffairPropsType = {
     // key не нужно типизировать
@@ -19,8 +20,8 @@ function Affair(props: AffairPropsType) {
             <span className={styles.item}>{name}</span>
             <span className={`${styles[props.affair.priority]} ${styles.item}`}>[{priority}]</span>
             {/*<button className={styles.button} onClick={() => deleteCallback(_id)}>X</button>*/}
-            <button
-                className={`${styles.item} ${styles.button}`} onClick={() => deleteCallback(_id)}>X</button>
+            <SuperButton
+                className={`${styles.item} ${styles.button}`} onClick={() => deleteCallback(_id)}>X</SuperButton>
             {/*<button onClick={() => props.deleteAffairCallback(_id)}>X</button>*/}
         </div>
     )

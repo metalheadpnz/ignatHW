@@ -1,10 +1,16 @@
 .superInput {
+    /*background-color: darkgreen;*/
+    /*margin: 5px;*/
+}
 
+.superInput:focus {
+    outline: none;
 }
 
 .errorInput {
     border: 3px solid lime;
     background: red;
+    /*margin: 5px;*/
 }
 
 .error {

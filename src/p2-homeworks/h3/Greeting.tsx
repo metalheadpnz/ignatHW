@@ -1,5 +1,7 @@
 import React, {ChangeEvent, KeyboardEvent, FocusEvent} from 'react'
 import s from './Greeting.module.css'
+import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
+import SuperInputText from "../h4/common/c1-SuperInputText/SuperInputText";
 
 
 type GreetingPropsType = {
@@ -31,21 +33,36 @@ const Greeting: React.FC<GreetingPropsType> = (
 
     return (
         <div>
-            <input value={name}
-                   onChange={setNameCallback}
-                   className={inputClass}
-                   onKeyPress={onKeyPressHandler}
-                   onBlur={onBlurInputHandler}
-                   onFocus={onFocusHandler}
-            />
+            {/*<input value={name}*/}
+            {/*       onChange={setNameCallback}*/}
+            {/*       className={inputClass}*/}
+            {/*       onKeyPress={onKeyPressHandler}*/}
+            {/*       onBlur={onBlurInputHandler}*/}
+            {/*       onFocus={onFocusHandler}*/}
+            {/*/>*/}
 
-            <button
+            <SuperInputText
+                value={name}
+                onChange={setNameCallback}
+                className={inputClass}
+                onKeyPress={onKeyPressHandler}
+                onBlur={onBlurInputHandler}
+                onFocus={onFocusHandler}/>
+
+            {/*<button*/}
+            {/*    onClick={addUser}*/}
+            {/*    disabled={error}*/}
+            {/*    className={s.addButton}*/}
+            {/*>*/}
+            {/*    add*/}
+            {/*</button>*/}
+
+            <SuperButton
                 onClick={addUser}
                 disabled={error}
                 className={s.addButton}
-            >
-                add
-            </button>
+                children={'add'}/>
+
             <span>{totalUsers}</span>
             <div className={s.redText}>{error && 'ошибка: обязтельное поле'}</div>
         </div>
