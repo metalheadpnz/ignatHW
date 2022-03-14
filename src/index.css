@@ -17,3 +17,8 @@ code {
 .bigText{
     font-size: 72px;
 }
+
+.center{
+    display: flex;
+    justify-content: center;
+}

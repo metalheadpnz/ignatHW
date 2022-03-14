@@ -1,0 +1,71 @@
+.wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropDownSpan {
+    font-size: 48px;
+    cursor: pointer;
+    transition: .6s;
+    /*margin-left: 10px;*/
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /*Убирает выделение в моб.версии*/
+    user-select: none
+}
+
+.activeShadow {
+    text-shadow: lightgreen 0px 0px 10px, white 0px 0px 10px, lightgreen 0px 0px 10px;
+}
+
+.buttonsBlockWrap {
+    width: 300px;
+    /*height: 40px;*/
+    display: inline-block;
+    align-items: center;
+    /*border: 1px solid white;*/
+    overflow: hidden;
+}
+
+.verticalAdjust{
+    display: flex;
+
+}
+
+.navLinks {
+    color: lightgreen;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 5px;
+    cursor: pointer;
+    /*border: 1px solid lightgreen;*/
+    border-radius: 8px;
+    transition: .2s;
+    font-size: 16px;
+    font-weight: bold;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    user-select: none
+}
+
+.activeNavLink {
+    background-color: rgba(144, 238, 144, .3);
+}
+
+.navLinks:hover {
+    /*background-color: rgba(144, 238, 144, .3);*/
+    /*color: white;*/
+}
+
+
+.collapsed {
+    transition-duration: .4s;
+    transform: translate(-300px);
+}
+
+.deployed {
+    transition-duration: .4s;
+    transform: translate(0);
+}
+
