@@ -20,9 +20,10 @@ function HW4() {
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
 
     return (
-        <div>
+        <div className='toLeft'>
             <hr/>
             homeworks 4
+
 
             <div className={s.column}>
                 <SuperInputText

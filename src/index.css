@@ -14,11 +14,15 @@ code {
     monospace;
 }
 
-.bigText{
+.bigText {
     font-size: 72px;
 }
 
-.center{
+.center {
+    /*display: flex;*/
+    /*justify-content: center;*/
+
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
