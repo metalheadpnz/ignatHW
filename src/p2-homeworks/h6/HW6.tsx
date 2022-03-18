@@ -3,6 +3,7 @@ import SuperEditableSpan from './common/c4-SuperEditableSpan/SuperEditableSpan'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 import {restoreState, saveState} from './localStorage/localStorage'
 import s from "../h3/Greeting.module.css";
+import s2 from "../h2/Affairs.module.css"
 
 function HW6() {
     const [value, setValue] = useState<string>('')
@@ -30,8 +31,8 @@ function HW6() {
 
                     />
                 </div>
-                <SuperButton onClick={save}>save</SuperButton>
-                <SuperButton onClick={restore}>restore</SuperButton>
+                <SuperButton onClick={save} className={s2.button}>save</SuperButton>
+                <SuperButton onClick={restore} className={s2.button}>restore</SuperButton>
             </div>
             <hr/>
             {/*для личного творчества, могу проверить*/}
