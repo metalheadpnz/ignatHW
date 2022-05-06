@@ -1,0 +1,22 @@
+.width360 {
+    width: 360px;
+    height: 1200px;
+}
+
+.orange {
+    color: orange;
+}
+
+.peopleItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mappedPeople {
+    margin: 20px 0;
+}
+
+.buttonsBlock {
+    display: flex;
+    justify-content: center;
+}
