@@ -5,7 +5,7 @@ import btnStl from "../h2/Affairs.module.css"
 
 function Clock() {
     const [timerId, setTimerId] = useState<number>(0)
-    const [date, setDate] = useState<Date>(new Date())
+    const [date, setDate] = useState<Date>()
     const [show, setShow] = useState<boolean>(false)
 
     const stop = () => {
@@ -28,8 +28,8 @@ function Clock() {
         setShow(false)
     }
 
-    const stringTime = date.toLocaleTimeString() // fix with date
-    const stringDate = date.toLocaleDateString()// fix with date
+    const stringTime = date?.toLocaleTimeString() || <span>click start</span> // fix with date
+    const stringDate = date?.toLocaleDateString() || <span>click start</span>// fix with date
 
     return (
         <div>
