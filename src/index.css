@@ -6,7 +6,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-image: url("./img/ignatHWBackGroung3.jpg");
-    color: lightgreen;
+    color: #90ee90;
 }
 
 code {
@@ -29,4 +29,14 @@ code {
 
 .redTest {
     background-color: red;
+}
+
+.greenBtn {
+    background-color: forestgreen;
+    width: 120px;
+    margin: 5px;
+}
+
+.greenBtn:active {
+    background-color: darkgreen;
 }
