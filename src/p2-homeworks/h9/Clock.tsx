@@ -1,34 +1,35 @@
 import React, {useState} from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import styles from "../h8/HW8.module.css";
+import btnStl from "../h2/Affairs.module.css"
 
 function Clock() {
     const [timerId, setTimerId] = useState<number>(0)
-    const [date, setDate] = useState<Date>()
+    const [date, setDate] = useState<Date>(new Date())
     const [show, setShow] = useState<boolean>(false)
-    const [systemDate, setSystemDate] = useState<Date>(new Date())
 
     const stop = () => {
         // stop
+        clearInterval(timerId)
     }
     const start = () => {
         stop()
         const id: number = window.setInterval(() => {
-            // setDate
 
+            setDate(new Date())
         }, 1000)
         setTimerId(id)
     }
 
     const onMouseEnter = () => {
-        setSystemDate(new Date())
         setShow(true)
     }
     const onMouseLeave = () => {
         setShow(false)
     }
 
-    const stringTime = 'Time' // fix with date
-    const stringDate = systemDate.toLocaleDateString()// fix with date
+    const stringTime = date.toLocaleTimeString() // fix with date
+    const stringDate = date.toLocaleDateString()// fix with date
 
     return (
         <div>
@@ -39,15 +40,16 @@ function Clock() {
                 {stringTime}
             </div>
 
-            {show && (
+            {show ?
                 <div>
                     {stringDate}
                 </div>
-            )}
-
-            <SuperButton onClick={start}>start</SuperButton>
-            <SuperButton onClick={stop}>stop</SuperButton>
-
+                : <br/>
+            }
+            <div className={styles.buttonsBlock}>
+                <SuperButton onClick={start} className={btnStl.button}>start</SuperButton>
+                <SuperButton onClick={stop} className={btnStl.button}>stop</SuperButton>
+            </div>
         </div>
     )
 }
