@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import SuperRange from './common/c7-SuperRange/SuperRange'
 import SuperDoubleRange from './common/c8-SuperDoubleRange/SuperDoubleRange'
+import {Slider} from "@mui/material";
 
 function HW11() {
     const [value1, setValue1] = useState(0)
@@ -14,14 +15,30 @@ function HW11() {
             {/*should work (должно работать)*/}
             <div>
                 <span>{value1}</span>
-                <SuperRange
+                <Slider
+
+                    aria-labelledby="track-inverted-slider"
+                    value={value1}
+                    onChange={(e, f) => {
+                        setValue1(+f && +f)
+                    }}
+
                     // сделать так чтоб value1 изменялось
                 />
             </div>
 
             <div>
                 <span>{value1}</span>
-                <SuperDoubleRange
+                <Slider
+                    track={'normal'}
+                    value={[value1, value2]}
+                    onChange={(e, f) => {
+                        if (Array.isArray(f)) {
+                            setValue1(f[0])
+                            setValue2(f[1])
+                        }
+
+                    }}
                     // сделать так чтоб value1 и value2 изменялось
                 />
                 <span>{value2}</span>
