@@ -40,3 +40,17 @@ code {
 .greenBtn:active {
     background-color: darkgreen;
 }
+
+.width360 {
+    width: 360px;
+    height: 1200px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.redText{
+    color: crimson;
+}
